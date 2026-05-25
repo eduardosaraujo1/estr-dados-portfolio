@@ -28,20 +28,18 @@ public:
     }
   }
   int Busca(int n) {
-    cout << "Iniciando busca" << '\n';
     int i = 0;
     int j = ProximaPosicaoLivre - 1;
     while (i < j) {
       int meio = (i + j + 1) / 2;
-      cout << "i=" << i << ";j=" << j << ";meio=" << meio << endl;
       if (VET[meio] == n) {
-        return n;
+        return meio;
       }
 
       if (VET[meio] > n) {
-        j = meio;
+        j = meio - 1;
       } else {
-        i = meio;
+        i = meio + 1;
       }
     }
     // for (int i = 0; i < ProximaPosicaoLivre; i++) {
